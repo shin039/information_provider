@@ -67,5 +67,4 @@ exports.createPages = async ({graphql, actions, reporter }) => {
   });
   
   logger.debug("-- END   createPages ----------------------------------------------------------");
-  
 }
