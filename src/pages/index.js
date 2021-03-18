@@ -1,8 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image  from "../components/image"
 import SEO    from "../components/seo"
 
 const IndexPage = () => {
@@ -22,18 +21,14 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
+      <h1>Textile List</h1>
 
       {/* 取得したデータを表示する。 */}
       {data.allContentfulTx.nodes.map(({ productNo, name }) => (
-        <h3 key={productNo}>{productNo} : {name}</h3>
+        <a href={`tx/${productNo}`}>
+          <h3 key={productNo}>{productNo} : {name}</h3>
+        </a>
       ))}
-
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
     </Layout>
   );
 }
